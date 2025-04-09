@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Home - Web Design App</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #ffe6f0;
+    }
+
+    header {
+      background-color: #ffccdf;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    header .logo {
+      font-weight: bold;
+      font-size: 22px;
+      color: #d63384;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #880e4f;
+      font-weight: 500;
+    }
+
+    .logout-btn {
+      background-color: #f50057;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .container {
+      display: flex;
+      padding: 60px 80px;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .text-section {
+      max-width: 500px;
+    }
+
+    .text-section h1 {
+      font-size: 48px;
+      color: #ad1457;
+    }
+
+    .text-section h2 {
+      color: #f06292;
+      margin-top: -15px;
+    }
+
+    .text-section p {
+      color: #4e1f35;
+      line-height: 1.6;
+    }
+
+    .text-section .learn-btn {
+      background-color: #ec407a;
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      border: none;
+      font-size: 16px;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+
+    .image-section img {
+      max-width: 500px;
+      border-radius: 20px;
+      border: 2px solid #ff80ab;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Universitas Brawijaya</div>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About Us</a>
+      <a href="#">Services</a>
+      <a href="#">Contact Us</a>
+      <form action="{{ url_for('logout') }}" method="POST" style="display:inline;">
+        <button type="submit" class="logout-btn">Logout</button>
+      </form>
+    </nav>
+  </header>
+
+  <div class="container">
+    <div class="text-section">
+      <h1>Hello, Welcome!</h1>
+      <h2>Cloud Computing</h2>
+      <p>
+        Saya Prameswari Aulia Shakira Putri dengan nim 233140707111116 kelas T4J kelompok 5 membuat tampilan web ini untuk memenuhi laporan ujian tengah semester mata kuliah cloud computing dengan menggunakan microsoft azure.
+      </p>
+      <button class="learn-btn">Pelajari Lebih Lanjut</button>
+    </div>
+    <div class="image-section">
+        <img src="{{ url_for('static', filename='cloud.jpg') }}">
+    </div>
+  </div>
+
+</body>
+</html>
